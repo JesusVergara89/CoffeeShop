@@ -16,15 +16,21 @@
         />
         <h2 class="text-3xl font-bold">Coffee Shop</h2>
       </div>
-      
       <nav class="flex items-center gap-4">
         {% if user.is_authenticated %}
-         <form method="post" action="{% url 'logout' %}">
+        <div class="flex items-center gap-4">
+          <a href="{% url 'list' %}" class="rounded border border-blue-600 bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 transition duration-200">
+            My Orders
+          </a>
+          <form method="post" action="{% url 'logout' %}" class="flex items-center">
             {% csrf_token %}
-            <button class="text-blue-600 hover:text-blue-800">Logout</button>
+            <button type="submit" class="text-blue-600 hover:text-blue-800 focus:outline-none">
+              Logout
+            </button>
           </form>
+        </div>
         {% else %}
-          <a href="{% url 'login' %}" class="text-blue-600 hover:text-blue-800">Login</a>
+          <a href="{% url 'login' %}" class="rounded border border-blue-600 bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 transition duration-200">Login</a>
         {% endif %}
       </nav>
     </header>
