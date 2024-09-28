@@ -1,7 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<h1 class="text-3xl font-bold underline">
+<h1 class="text-3xl text-center font-bold underline">
     List of products
   </h1>
+  <div class="flex justify-center max-h-400">
 <ul>
   {% for product in list_products %}
   <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4">
@@ -22,5 +23,6 @@
   <li>No products available</li>
   {% endfor %}
 </ul>
+</div>
 
 {% endblock %}
