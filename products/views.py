@@ -5,14 +5,11 @@ from .models import Product
 from django.views import generic
 from .forms import ProductForm
 
-class ListProductsView(TemplateView):
+class ListProductsView(generic.ListView):
+    model = Product
     template_name = "products/list_products.html"
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        products = Product.objects.all()
-        context['list_products'] = products
-        return context
+    context_object_name = 'list_products'
+
     
 class ProductFormView(generic.FormView):
     template_name = "products/add_products.html"

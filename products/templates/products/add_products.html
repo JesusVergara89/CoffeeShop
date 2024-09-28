@@ -1,16 +1,12 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add product</title>
-</head>
+{% extends 'base.html' %} {% block content %}
 <body>
-    <h1>Add product</h1>
+    <h1 class="text-3xl font-bold underline">
+        Add product
+      </h1>
     <form method="post" action="{% url 'add' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
 </body>
-</html>
+{% endblock %}
