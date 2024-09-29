@@ -26,10 +26,11 @@ environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = "django-insecure-kl!!!xkbx2phfe%^t-0f^r@jgj9j6@nqcq@^(+^)pk1+#4io_$"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'coffe-shop-production.eba-gewxnsaq.us-east-2.elasticbeanstalk.com'
+    'coffe-shop-production.eba-gewxnsaq.us-east-2.elasticbeanstalk.com',
+    '172.31.12.9',
 ]
 
 
