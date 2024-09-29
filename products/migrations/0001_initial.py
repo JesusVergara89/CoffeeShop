@@ -7,19 +7,49 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(max_length=100, verbose_name='Product name')),
-                ('description', models.TextField(max_length=200, verbose_name='Product description')),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Product price')),
-                ('available', models.BooleanField(default=True, verbose_name='Product availability')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='logos', verbose_name='Product image')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField(max_length=100, verbose_name="Product name")),
+                (
+                    "description",
+                    models.TextField(
+                        max_length=200, verbose_name="Product description"
+                    ),
+                ),
+                (
+                    "price",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=10, verbose_name="Product price"
+                    ),
+                ),
+                (
+                    "available",
+                    models.BooleanField(
+                        default=True, verbose_name="Product availability"
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True,
+                        null=True,
+                        upload_to="logos",
+                        verbose_name="Product image",
+                    ),
+                ),
             ],
         ),
     ]
