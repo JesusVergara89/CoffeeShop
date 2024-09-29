@@ -1,12 +1,19 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 <body>
-    <h1 class="text-3xl font-bold underline">
-        Add product
-      </h1>
-    <form method="post" action="{% url 'add' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+    <div class="max-w-[400px] max-h-[400px] mx-auto bg-gray-100 p-6 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold underline text-center mb-4">
+            Add product
+        </h1>
+        <form method="post" action="{% url 'add' %}" class="space-y-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-center">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
 </body>
 {% endblock %}

@@ -9,7 +9,7 @@ class Product(models.Model):
     )
     available = models.BooleanField(default=True, verbose_name="Product availability")
     image = models.ImageField(
-        upload_to="logos/", null=True, blank=True, verbose_name="Product image"
+        upload_to="logos", null=True, blank=True, verbose_name="Product image"
     )
 
     def __str__(self):
