@@ -29,6 +29,8 @@ SECRET_KEY = "django-insecure-kl!!!xkbx2phfe%^t-0f^r@jgj9j6@nqcq@^(+^)pk1+#4io_$
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
     'coffe-shop-production.eba-gewxnsaq.us-east-2.elasticbeanstalk.com',
     '172.31.12.9',
 ]
