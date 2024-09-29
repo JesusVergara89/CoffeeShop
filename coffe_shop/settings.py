@@ -28,12 +28,7 @@ SECRET_KEY = "django-insecure-kl!!!xkbx2phfe%^t-0f^r@jgj9j6@nqcq@^(+^)pk1+#4io_$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    'coffe-shop-production.eba-gewxnsaq.us-east-2.elasticbeanstalk.com',
-    '172.31.12.9',
-]
+ALLOWED_HOSTS = ['shop-production.eba-sz5f4pc9.us-east-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -46,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "crispy_forms",
-    "crispy_bootstrap5",
     "crispy_tailwind",
     "rest_framework",
     "products",
@@ -92,6 +86,18 @@ WSGI_APPLICATION = "coffe_shop.wsgi.application"
 
 DATABASES = {"default": env.db("DATABASE_URL")}
 
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'gost',
+        'PORT': '5432',
+    }
+}
+"""
 # DATABASE_URL="postgres://USER:PASSWORD@HOST:PORT/NAME"
 
 # Password validation
@@ -129,7 +135,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")  # Directorio para archivos estáticos recopilados
+
+# Asegúrate de que STATICFILES_DIRS apunte a tu carpeta de estáticos
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
